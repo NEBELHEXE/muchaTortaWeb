@@ -1,0 +1,274 @@
+/* MuchaTorta styles - aligned to HTML structure */
+:root {
+    --accent: #ff0f31;
+    --muted: #ffffff;
+    --card-bg: #ffffff;
+    --bigcard-bg: #ffe5e0;
+    --container: 1200px;
+    --page-padding: 20px;
+}
+
+body {
+    font-family: 'Pirata One', 'Segoe UI', Tahoma, sans-serif;
+    background-image: radial-gradient(#fffFf3, #ffddd7, #ffbbb3, #ff888d, #ffaf36);
+    background-position: fixed;
+    color: #222;
+    margin-top: 100px;
+    padding: var(--page-padding);
+    -webkit-font-smoothing: antialiased;
+}
+
+.titleContainer {
+    width: 100%;
+    position: fixed;
+    align-items: center;
+    left: 0%;
+    top: 0;
+    background-color: var(--accent);
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.33);
+    opacity: 0.9;
+}
+
+.titleContainer header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-family: 'DM Serif Text', 'Segoe UI', Tahoma, sans-serif;
+}
+
+.titleContainer header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--muted);
+}
+
+.titleContainer header h2 {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin: 0;
+    color: var(--muted);
+}
+
+#socialMediaLinks {
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+#socialMediaLinks a {
+    text-decoration: none;
+    font-size: 3rem;
+    color: #000;
+}
+
+/* transiciones de iconos */
+#socialMediaLinks a, #socialMediaLinks a i { transition: color 150ms ease; }
+
+/* asignacion de colores */
+#socialMediaLinks a:hover .fa-facebook { color: #3b5998; } /* Facebook blue */
+#socialMediaLinks a:hover .fa-whatsapp { color: #25D366; } /* WhatsApp green */
+#socialMediaLinks a:hover .fa-instagram { color: #E1306C; } /* Instagram magenta */
+
+/* fallback: keep anchor color unchanged on hover */
+#socialMediaLinks a:hover { color: inherit; }
+
+#mainPage {
+    max-width: var(--container);
+    margin: 0 auto;
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+#mainPage #description p {
+    text-align: center;
+    font-size: 2.75rem;
+    margin-bottom: 3.5rem;
+}
+
+#mainPage #hours {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 5rem;
+    width: 80%;
+}
+
+#mainPage #hours ul{
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    list-style: none;
+}
+
+#mainPage #hours ul li{
+   margin-bottom: 0.75rem;
+   margin: 0  auto;
+}
+
+#mainPage #hours h2{
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+   height: auto;
+}
+
+#menuText h2 {
+    text-align: center;
+    font-size: 6rem;
+    margin-bottom: 2rem;
+    letter-spacing: 10px;
+    font-variant-caps: unicase;
+}
+
+#menuContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    
+}
+#menuPaquetes,
+#menuTortas,
+#sencilla,
+#complementos {
+    flex: 1 1 45%;
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#menuPaquetes h2,
+#menuTortas h2,
+#sencilla h2,
+#complementos h2 {
+    font-weight: 1000;
+    letter-spacing: 3px;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#menuPaquetes .bigCard,
+#menuTortas .bigCard,
+#sencilla .bigCard,
+#complementos .bigCard {
+    background-color: var(--bigcard-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#menuPaquetes .card,
+#menuTortas .card,
+#sencilla .card,
+#complementos .card {
+    margin-bottom: 1rem;
+}
+
+#menuPaquetes p {
+    text-decoration: wavy underline;
+    text-decoration-thickness: 1px;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#paquete ul li:last-child {
+    list-style: none;
+}
+
+#complementos ul {
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+
+#complementos ul li {
+    margin-bottom: 0.25rem;
+}
+
+.spanAgua {
+    position: relative;
+    left: 5rem;
+}
+
+/* Use SVG as list icon for menu items */
+#menuContainer li {
+    list-style: none;
+    /* Embedded fallback SVG (reliable across browsers) - small plate icon in accent color */
+    background-image: url(/images/food-svgrepo-com.png);
+    background-repeat: no-repeat;
+    /* ensure icon is a consistent small size and vertically centered */
+    background-size: 3rem 3rem;
+    background-position: left -3px center;
+    padding-left: 32px;
+    display: block;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #ccc;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5rem;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: whitesmoke;
+    transition: ease-in-out 150ms;
+}
+
+/* Responsive breakpoints */
+/* Phones: up to 599px */
+@media (max-width: 599px) {
+    :root { --page-padding: 16px; }
+    body { margin-top: 60px; padding: 16px; }
+    .titleContainer header h1 { font-size: 1.6rem; }
+    .titleContainer header h2 { font-size: 0.9rem; }
+    #socialMediaLinks { gap: 1rem; }
+    #socialMediaLinks a { font-size: 1.6rem; }
+    #mainPage { margin-top: 8rem; }
+    #mainPage #description p { font-size: 1.05rem; margin-bottom: 1.5rem; }
+    #menuText h2 { font-size: 2rem; letter-spacing: 3px; }
+    #menuContainer { grid-template-columns: 1fr; gap: 1rem; padding: 0 var(--page-padding); box-sizing: border-box; }
+    #menuPaquetes, #menuTortas, #sencilla, #complementos { flex: 1 1 100%; }
+}
+
+/* Tablets: 600px to 1023px */
+@media (min-width: 600px) and (max-width: 1023px) {
+    :root { --page-padding: 20px; }
+    body { margin-top: 80px; padding: 20px; }
+    .titleContainer header h1 { font-size: 2rem; }
+    .titleContainer header h2 { font-size: 1rem; }
+    #socialMediaLinks a { font-size: 2.2rem; }
+    #mainPage { margin-top: 9rem; }
+    #mainPage #description p { font-size: 1.4rem; }
+    #menuText h2 { font-size: 3rem; letter-spacing: 6px; }
+    #menuContainer { grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 0 var(--page-padding); box-sizing: border-box; }
+    #menuPaquetes, #menuTortas, #sencilla, #complementos { flex: 1 1 48%; }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+    :root { --page-padding: 24px; }
+    body { margin-top: 100px; padding: 24px; }
+    .titleContainer header h1 { font-size: 2.5rem; }
+    .titleContainer header h2 { font-size: 1.25rem; }
+    #socialMediaLinks a { font-size: 3rem; }
+    #mainPage #description p { font-size: 2.75rem; }
+    #menuText h2 { font-size: 6rem; letter-spacing: 10px; }
+    #menuContainer { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    #menuPaquetes, #menuTortas, #sencilla, #complementos { flex: 1 1 45%; }
+}
